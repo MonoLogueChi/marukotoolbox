@@ -52,7 +52,7 @@ namespace mp4box
             bgworker.DoWork += bgworker_DoWork;
             bgworker.WorkerReportsProgress = true;
             bgworker.ProgressChanged += bgworker_ProgressChanged;
-            bgworker.RunWorkerCompleted += bgworker__RunWorkerCompleted;
+            bgworker.RunWorkerCompleted += bgworker_RunWorkerCompleted;
             bgworker.WorkerSupportsCancellation = true;
         }
 
@@ -310,7 +310,7 @@ namespace mp4box
                     return;
                 }
                 else
-                    ProcAbort();
+                    buttonAbort.PerformClick();
             }
             // clean up temp batch file
             System.IO.File.Delete(batPath);
@@ -393,10 +393,18 @@ namespace mp4box
             UpdateProgress((double)e.UserState);
         }
 
-        void bgworker__RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        void bgworker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             if (win7supported)
-                taskbarProgress.SetProgressState(this.Handle, TBPFLAG.TBPF_NOPROGRESS);
+                try
+                {
+                    taskbarProgress.SetProgressState(this.Handle, TBPFLAG.TBPF_NOPROGRESS);
+                }
+                catch
+                {
+                    // Nothing breaks if this failed. Silently suppress it.
+                    //   Maybe the form is just closing or stay invisible?
+                };
         }
 
         #endregion
