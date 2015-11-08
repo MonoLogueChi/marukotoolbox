@@ -288,6 +288,7 @@
             this.BlackVideoTextBox = new ControlExs.QQTextBox();
             this.SetupTabPage = new System.Windows.Forms.TabPage();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.x265CheckBox = new ControlExs.QQCheckBox();
             this.label38 = new System.Windows.Forms.Label();
             this.SetupPlayerTextBox = new ControlExs.QQTextBox();
             this.SetupPlayerButton = new ControlExs.QQButton();
@@ -2794,6 +2795,7 @@
             // 
             // groupBox14
             // 
+            this.groupBox14.Controls.Add(this.x265CheckBox);
             this.groupBox14.Controls.Add(this.label38);
             this.groupBox14.Controls.Add(this.SetupPlayerTextBox);
             this.groupBox14.Controls.Add(this.SetupPlayerButton);
@@ -2802,6 +2804,14 @@
             resources.ApplyResources(this.groupBox14, "groupBox14");
             this.groupBox14.Name = "groupBox14";
             this.groupBox14.TabStop = false;
+            // 
+            // x265CheckBox
+            // 
+            resources.ApplyResources(this.x265CheckBox, "x265CheckBox");
+            this.x265CheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.x265CheckBox.Name = "x265CheckBox";
+            this.x265CheckBox.UseVisualStyleBackColor = false;
+            this.x265CheckBox.Click += new System.EventHandler(this.x265CheckBox_Click);
             // 
             // label38
             // 
@@ -3336,6 +3346,7 @@
         private System.Windows.Forms.GroupBox groupBox13;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.ComboBox MuxAacEncoderComboBox;
+        private ControlExs.QQCheckBox x265CheckBox;
     }
 }
 

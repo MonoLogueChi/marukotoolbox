@@ -7425,6 +7425,39 @@
   <data name="&gt;&gt;MiscTab.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="x265CheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="x265CheckBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9pt</value>
+  </data>
+  <data name="x265CheckBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="x265CheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>341, 56</value>
+  </data>
+  <data name="x265CheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 19</value>
+  </data>
+  <data name="x265CheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="x265CheckBox.Text" xml:space="preserve">
+    <value>启用x265</value>
+  </data>
+  <data name="&gt;&gt;x265CheckBox.Name" xml:space="preserve">
+    <value>x265CheckBox</value>
+  </data>
+  <data name="&gt;&gt;x265CheckBox.Type" xml:space="preserve">
+    <value>ControlExs.QQCheckBox, ControlExs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;x265CheckBox.Parent" xml:space="preserve">
+    <value>groupBox14</value>
+  </data>
+  <data name="&gt;&gt;x265CheckBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="label38.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -7453,7 +7486,7 @@
     <value>groupBox14</value>
   </data>
   <data name="&gt;&gt;label38.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="SetupPlayerTextBox.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9pt</value>
@@ -7477,7 +7510,7 @@
     <value>groupBox14</value>
   </data>
   <data name="&gt;&gt;SetupPlayerTextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="SetupPlayerButton.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9pt</value>
@@ -7507,7 +7540,7 @@
     <value>groupBox14</value>
   </data>
   <data name="&gt;&gt;SetupPlayerButton.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="SetupDeleteTempFileCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7540,7 +7573,7 @@
     <value>groupBox14</value>
   </data>
   <data name="&gt;&gt;SetupDeleteTempFileCheckBox.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="CheckUpdateCheckBox.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7573,7 +7606,7 @@
     <value>groupBox14</value>
   </data>
   <data name="&gt;&gt;CheckUpdateCheckBox.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="groupBox14.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 251</value>

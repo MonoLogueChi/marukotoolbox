@@ -987,6 +987,7 @@ namespace mp4box
             x264ThreadsComboBox.SelectedIndex = 0;
             SetupDeleteTempFileCheckBox.Checked = true;
             CheckUpdateCheckBox.Checked = true;
+            x265CheckBox.Checked = false;
 
             #endregion Setup Tab
         }
@@ -1000,7 +1001,10 @@ namespace mp4box
                 x264BitrateNum.Value = Convert.ToDecimal(ConfigurationManager.AppSettings["x264Bitrate"]);
                 x264AudioParameterTextBox.Text = ConfigurationManager.AppSettings["x264AudioParameter"];
                 x264AudioModeComboBox.SelectedIndex = Convert.ToInt32(ConfigurationManager.AppSettings["x264AudioMode"]);
-                x264ExeComboBox.SelectedIndex = Convert.ToInt32(ConfigurationManager.AppSettings["x264Exe"]);
+                if (int.Parse(ConfigurationManager.AppSettings["x264Exe"]) > x264ExeComboBox.Items.Count - 1)
+                    x264ExeComboBox.SelectedIndex = 0;
+                else
+                    x264ExeComboBox.SelectedIndex = Convert.ToInt32(ConfigurationManager.AppSettings["x264Exe"]);
                 x264DemuxerComboBox.SelectedIndex = Convert.ToInt32(ConfigurationManager.AppSettings["x264Demuxer"]);
                 x264WidthNum.Value = Convert.ToDecimal(ConfigurationManager.AppSettings["x264Width"]);
                 x264HeightNum.Value = Convert.ToDecimal(ConfigurationManager.AppSettings["x264Height"]);
@@ -1020,6 +1024,7 @@ namespace mp4box
                 SetupDeleteTempFileCheckBox.Checked = Convert.ToBoolean(ConfigurationManager.AppSettings["SetupDeleteTempFile"]);
                 CheckUpdateCheckBox.Checked = Convert.ToBoolean(ConfigurationManager.AppSettings["CheckUpdate"]);
                 x264ThreadsComboBox.SelectedIndex = Convert.ToInt32(ConfigurationManager.AppSettings["x264Threads"]);
+                x265CheckBox.Checked = Convert.ToBoolean(ConfigurationManager.AppSettings["x265Enable"]);
                 TrayModeCheckBox.Checked = Convert.ToBoolean(ConfigurationManager.AppSettings["TrayMode"]);
                 SplashScreenCheckBox.Checked = Convert.ToBoolean(ConfigurationManager.AppSettings["SplashScreen"]);
                 SetupPlayerTextBox.Text = ConfigurationManager.AppSettings["PreviewPlayer"];
@@ -1116,6 +1121,7 @@ namespace mp4box
             cfa.AppSettings.Settings["LanguageIndex"].Value = languageComboBox.SelectedIndex.ToString();
             cfa.AppSettings.Settings["SplashScreen"].Value = SplashScreenCheckBox.Checked.ToString();
             cfa.AppSettings.Settings["x264Threads"].Value = x264ThreadsComboBox.SelectedIndex.ToString();
+            cfa.AppSettings.Settings["x265Enable"].Value = x265CheckBox.Checked.ToString();
             cfa.AppSettings.Settings["PreviewPlayer"].Value = SetupPlayerTextBox.Text;
             cfa.AppSettings.Settings["MuxFormat"].Value = MuxFormatComboBox.SelectedIndex.ToString(); ;
             cfa.Save();
@@ -1165,15 +1171,20 @@ namespace mp4box
             //load x264 exe
             DirectoryInfo folder = new DirectoryInfo(workPath);
             List<string> x264exe = new List<string>();
-            foreach (FileInfo FileName in folder.GetFiles())
+            try
             {
-                if ((FileName.Name.ToLower().Contains("x264") || FileName.Name.ToLower().Contains("xxxx")) && Path.GetExtension(FileName.Name) == ".exe")
+                bool usex265 = bool.Parse(ConfigurationManager.AppSettings["x265Enable"].ToString());
+                foreach (FileInfo FileName in folder.GetFiles())
                 {
-                    x264exe.Add(FileName.Name);
+                    if ((FileName.Name.ToLower().Contains("x264") || FileName.Name.ToLower().Contains(usex265 ? "x265" : "xxxx")) && Path.GetExtension(FileName.Name) == ".exe")
+                    {
+                        x264exe.Add(FileName.Name);
+                    }
                 }
+                x264exe = x264exe.OrderByDescending(i => i.Substring(7)).ToList();
+                x264ExeComboBox.Items.AddRange(x264exe.ToArray());
             }
-            x264exe = x264exe.OrderByDescending(i => i.Substring(7)).ToList();
-            x264ExeComboBox.Items.AddRange(x264exe.ToArray());
+            catch { }
 
             //load AVS filter
             DirectoryInfo avspath = new DirectoryInfo(workPath + "\\avsfilter");
@@ -4460,5 +4471,12 @@ namespace mp4box
         }
 
         #endregion
+
+        private void x265CheckBox_Click(object sender, EventArgs e)
+        {
+            if (ShowQuestion("你必须重新启动小丸工具箱才能使设置的生效 是否现在重新启动？", "需要重新启动") == DialogResult.Yes)
+                Application.Restart();
+        }
+
     }
 }
