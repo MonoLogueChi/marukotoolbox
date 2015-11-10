@@ -340,7 +340,7 @@ namespace mp4box
                 if (x264extraLine.Text != string.Empty)
                     sb.Append(" " + x264extraLine.Text);
                 else
-                    sb.Append(""); // 小丸工具箱除界面设置外的内置参数
+                    sb.Append(" --preset slower --tu-intra-depth 3 --tu-inter-depth 3 --rdpenalty 2 --me 3 --subme 5 --merange 44 --b-intra --no-rect --no-amp --ref 5 --weightb --bframes 8 --aq-mode 1 --aq-strength 1.0 --rd 5 --psy-rd 0.7 --psy-rdoq 5.0 --rdoq-level 1 --no-sao --no-open-gop --rc-lookahead 80 --scenecut 40 --max-merge 4 --qcomp 0.7 --no-strong-intra-smoothing --deblock -1:-1 --qg-size 16");
             }
             if (x264SeekNumericUpDown.Value != 0)
                 sb.Append(" --seek " + x264SeekNumericUpDown.Value.ToString());
