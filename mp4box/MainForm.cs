@@ -1499,8 +1499,9 @@ namespace mp4box
         {
             bool hasAudio = false;
             string bat = "";
-            string tempVideo = "vtemp.mp4";
-            string tempAudio = "atemp" + getAudioExt();
+            string inputName = Util.ChangeExt(input, "");
+            string tempVideo = inputName + "_vtemp.mp4";
+            string tempAudio = inputName + "_atemp" + getAudioExt();
 
             //检测是否含有音频
             MediaInfo MI = new MediaInfo();
@@ -1523,7 +1524,7 @@ namespace mp4box
                 case 2:
                     if (audio.ToLower() == "aac")
                     {
-                        tempAudio = "atemp.aac";
+                        tempAudio = inputName + "_atemp.aac";
                         aextract = ExtractAudio(input, tempAudio);
                     }
                     else
@@ -1565,8 +1566,10 @@ namespace mp4box
             if (audioMode != 1 && hasAudio) //如果压制音频
                 bat += aextract + x264 + mux + " \r\n";
             else
-                bat += x264;
+                bat += x264 + " \r\n";
 
+            bat += "del \"" + tempAudio + "\"\r\n";
+            bat += "del \"" + tempVideo + "\"\r\n";
             bat += "echo ===== one file is completed! =====\r\n";
             return bat;
         }
@@ -2388,6 +2391,11 @@ namespace mp4box
                 return;
             }
 
+            if (AudioEncoderComboBox.SelectedIndex != 0 && AudioEncoderComboBox.SelectedIndex != 1 && AudioEncoderComboBox.SelectedIndex != 5)
+            {
+                ShowWarningMessage("音频页面中的编码器未采用AAC将可能导致压制失败，建议将编码器改为QAAC、NeroAAC或FDKAAC。");
+            }
+
             //防止未选择 x264 thread
             if (x264ThreadsComboBox.SelectedIndex == -1)
             {
@@ -2426,9 +2434,9 @@ namespace mp4box
             if (!string.IsNullOrEmpty(audio))
                 hasAudio = true;
             int audioMode = x264AudioModeComboBox.SelectedIndex;
-            if (!hasAudio)
+            if (!hasAudio && x264AudioModeComboBox.SelectedIndex != 1)
             {
-                DialogResult r = ShowQuestion("经检测，视频不包含音频流是否采用无音频流方式压制？", "提示");
+                DialogResult r = ShowQuestion("原视频不包含音频流，音频模式是否改为无音频流？", "提示");
                 if (r == DialogResult.Yes)
                     audioMode = 1;
             }
