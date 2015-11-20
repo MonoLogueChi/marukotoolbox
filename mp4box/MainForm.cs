@@ -128,7 +128,7 @@ namespace mp4box
 
         public string MediaInfo(string VideoName)
         {
-            string info = "无视频信息";
+            StringBuilder info = new StringBuilder();
             if (File.Exists(VideoName))
             {
                 MediaInfo MI = new MediaInfo();
@@ -140,7 +140,7 @@ namespace mp4box
                 string fileSize = MI.Get(StreamKind.General, 0, "FileSize/String");
                 //视频
                 string vid = MI.Get(StreamKind.Video, 0, "ID");
-                string video = MI.Get(StreamKind.Video, 0, "Format");
+                string vformat = MI.Get(StreamKind.Video, 0, "Format");
                 string vBitRate = MI.Get(StreamKind.Video, 0, "BitRate/String");
                 string vSize = MI.Get(StreamKind.Video, 0, "StreamSize/String");
                 string width = MI.Get(StreamKind.Video, 0, "Width");
@@ -148,16 +148,20 @@ namespace mp4box
                 string risplayAspectRatio = MI.Get(StreamKind.Video, 0, "DisplayAspectRatio/String");
                 string risplayAspectRatio2 = MI.Get(StreamKind.Video, 0, "DisplayAspectRatio");
                 string frameRate = MI.Get(StreamKind.Video, 0, "FrameRate/String");
+                string colorSpace = MI.Get(StreamKind.Video, 0, "ColorSpace");
+                string chromaSubsampling = MI.Get(StreamKind.Video, 0, "ChromaSubsampling");
                 string bitDepth = MI.Get(StreamKind.Video, 0, "BitDepth/String");
+                string scanType = MI.Get(StreamKind.Video, 0, "ScanType/String");
                 string pixelAspectRatio = MI.Get(StreamKind.Video, 0, "PixelAspectRatio");
-                string encodedLibrary = MI.Get(StreamKind.Video, 0, "Encoded_Library");
+                string encodedLibrary = MI.Get(StreamKind.Video, 0, "Encoded_Library/String");
+                string encodingSettings = MI.Get(StreamKind.Video, 0, "Encoded_Library_Settings");
                 string encodeTime = MI.Get(StreamKind.Video, 0, "Encoded_Date");
                 string codecProfile = MI.Get(StreamKind.Video, 0, "Codec_Profile");
                 string frameCount = MI.Get(StreamKind.Video, 0, "FrameCount");
 
                 //音频
                 string aid = MI.Get(StreamKind.Audio, 0, "ID");
-                string audio = MI.Get(StreamKind.Audio, 0, "Format");
+                string aformat = MI.Get(StreamKind.Audio, 0, "Format");
                 string aBitRate = MI.Get(StreamKind.Audio, 0, "BitRate/String");
                 string samplingRate = MI.Get(StreamKind.Audio, 0, "SamplingRate/String");
                 string channel = MI.Get(StreamKind.Audio, 0, "Channel(s)");
@@ -166,38 +170,65 @@ namespace mp4box
                 string audioInfo = MI.Get(StreamKind.Audio, 0, "Inform") + MI.Get(StreamKind.Audio, 1, "Inform") + MI.Get(StreamKind.Audio, 2, "Inform") + MI.Get(StreamKind.Audio, 3, "Inform");
                 string videoInfo = MI.Get(StreamKind.Video, 0, "Inform");
 
-                info = Path.GetFileName(VideoName) + "\r\n" +
-                    "容器：" + container + "\r\n" +
-                    "总码率：" + bitrate + "\r\n" +
-                    "大小：" + fileSize + "\r\n" +
-                    "时长：" + duration + "\r\n" +
-                    "\r\n" +
-                    "视频(" + vid + ")：" + video + "\r\n" +
-                    "码率：" + vBitRate + "\r\n" +
-                    "大小：" + vSize + "\r\n" +
-                    "分辨率：" + width + "x" + height + "\r\n" +
-                    "宽高比：" + risplayAspectRatio + "(" + risplayAspectRatio2 + ")" + "\r\n" +
-                    "帧率：" + frameRate + "\r\n" +
-                    "位深度：" + bitDepth + "\r\n" +
-                    "像素宽高比：" + pixelAspectRatio + "\r\n" +
-                    "编码库：" + encodedLibrary + "\r\n" +
-                    "Profile：" + codecProfile + "\r\n" +
-                    "编码时间：" + encodeTime + "\r\n" +
-                    "总帧数：" + frameCount + "\r\n" +
+                info = info.Append(Path.GetFileName(VideoName) + "\r\n");
+                if (!string.IsNullOrEmpty(container))
+                    info.Append("容器：" + container + "\r\n");
+                if (!string.IsNullOrEmpty(bitrate))
+                    info.Append("总码率：" + bitrate + "\r\n");
+                if (!string.IsNullOrEmpty(fileSize))
+                    info.Append("大小：" + fileSize + "\r\n");
+                if (!string.IsNullOrEmpty(duration))
+                    info.Append("时长：" + duration + "\r\n");
 
-                    "\r\n" +
-                    "音频(" + aid + ")：" + audio + "\r\n" +
-                    "大小：" + aSize + "\r\n" +
-                    "码率：" + aBitRate + "\r\n" +
-                    "采样率：" + samplingRate + "\r\n" +
-                    "声道数：" + channel + "\r\n" +
-                    "\r\n====详细信息====\r\n" +
-                    videoInfo + "\r\n" +
-                    audioInfo + "\r\n"
-                    ;
+                if (!string.IsNullOrEmpty(vformat))
+                    info.Append("\r\n" + "视频(" + vid + ")：" + vformat + "\r\n");
+                if (!string.IsNullOrEmpty(codecProfile))
+                    info.Append("Profile：" + codecProfile + "\r\n");
+                if (!string.IsNullOrEmpty(vBitRate))
+                    info.Append("码率：" + vBitRate + "\r\n");
+                if (!string.IsNullOrEmpty(vSize))
+                    info.Append("文件大小：" + vSize + "\r\n");
+                if (!string.IsNullOrEmpty(width) && !string.IsNullOrEmpty(height))
+                    info.Append("分辨率：" + width + "x" + height + "\r\n");
+                if (!string.IsNullOrEmpty(risplayAspectRatio) && !string.IsNullOrEmpty(risplayAspectRatio2))
+                    info.Append("画面比例：" + risplayAspectRatio + "(" + risplayAspectRatio2 + ")" + "\r\n");
+                if (!string.IsNullOrEmpty(pixelAspectRatio))
+                    info.Append("像素宽高比：" + pixelAspectRatio + "\r\n");
+                if (!string.IsNullOrEmpty(frameRate))
+                    info.Append("帧率：" + frameRate + "\r\n");
+                if (!string.IsNullOrEmpty(colorSpace))
+                    info.Append("色彩空间：" + colorSpace + "\r\n");
+                if (!string.IsNullOrEmpty(chromaSubsampling))
+                    info.Append("色度抽样：" + chromaSubsampling + "\r\n");
+                if (!string.IsNullOrEmpty(bitDepth))
+                    info.Append("位深度：" + bitDepth + "\r\n");
+                if (!string.IsNullOrEmpty(scanType))
+                    info.Append("扫描方式：" + scanType + "\r\n");
+                if (!string.IsNullOrEmpty(encodeTime))
+                    info.Append("编码时间：" + encodeTime + "\r\n");
+                if (!string.IsNullOrEmpty(frameCount))
+                    info.Append("总帧数：" + frameCount + "\r\n");
+                if (!string.IsNullOrEmpty(encodedLibrary))
+                    info.Append("编码库：" + encodedLibrary + "\r\n");
+                if (!string.IsNullOrEmpty(encodingSettings))
+                    info.Append("编码设置：" + encodingSettings + "\r\n");
+
+                if (!string.IsNullOrEmpty(aformat))
+                    info.Append("\r\n" + "音频(" + aid + ")：" + aformat + "\r\n");
+                if (!string.IsNullOrEmpty(aSize))
+                    info.Append("大小：" + aSize + "\r\n");
+                if (!string.IsNullOrEmpty(aBitRate))
+                    info.Append("码率：" + aBitRate + "\r\n");
+                if (!string.IsNullOrEmpty(samplingRate))
+                    info.Append("采样率：" + samplingRate + "\r\n");
+                if (!string.IsNullOrEmpty(channel))
+                    info.Append("声道数：" + channel + "\r\n");
+                info.Append("\r\n====详细信息====\r\n" + videoInfo + "\r\n" + audioInfo + "\r\n");
                 MI.Close();
             }
-            return info;
+            else
+                info.Append("文件不存在、非有效文件或者文件夹 无视频信息");
+            return info.ToString();
         }
 
         public string ffmuxbat(string input1, string input2, string output)
@@ -245,8 +276,11 @@ namespace mp4box
             }
             if (x264mode != 0)
             {
-                sb.Append(" --demuxer " + x264DemuxerComboBox.Text + " --threads " + x264ThreadsComboBox.SelectedItem.ToString());
-                if (x264extraLine.Text != "")
+                if (x264DemuxerComboBox.Text != "auto" && x264DemuxerComboBox.Text != string.Empty)
+                    sb.Append(" --demuxer " + x264DemuxerComboBox.Text);
+                if (x264ThreadsComboBox.SelectedItem.ToString() != "auto" && x264ThreadsComboBox.SelectedItem.ToString() != string.Empty)
+                    sb.Append(" --threads " + x264ThreadsComboBox.SelectedItem.ToString());
+                if (x264extraLine.Text != string.Empty)
                     sb.Append(" " + x264extraLine.Text);
                 else
                     sb.Append(" --preset 8 " + " -I " + keyint + " -r 4 -b 3 --me umh -i 1 --scenecut 60 -f 1:1 --qcomp 0.5 --psy-rd 0.3:0 --aq-mode 2 --aq-strength 0.8");
@@ -303,7 +337,7 @@ namespace mp4box
             }
             if (x264mode != 0)
             {
-                if (x264extraLine.Text != "")
+                if (x264extraLine.Text != string.Empty)
                     sb.Append(" " + x264extraLine.Text);
                 else
                     sb.Append(""); // 小丸工具箱除界面设置外的内置参数
@@ -1519,7 +1553,7 @@ namespace mp4box
                     aextract = audiobat(input, tempAudio);
                     break;
                 case 1:
-                    aextract = "";
+                    aextract = string.Empty;
                     break;
                 case 2:
                     if (audio.ToLower() == "aac")
@@ -1545,16 +1579,13 @@ namespace mp4box
             }
             else if (x264ExeComboBox.SelectedItem.ToString().ToLower().Contains("x265"))
             {
-                tempVideo = "vtemp.hevc";
+                tempVideo = inputName + "_vtemp.hevc";
                 if (x264mode == 2)
                     x264 = x265bat(input, tempVideo, 1) + "\r\n" +
                            x265bat(input, tempVideo, 2);
-                else x264 = x265bat(input, tempVideo, 0);
+                else x264 = x265bat(input, tempVideo);
                 if (audioMode == 1 || !hasAudio)
-                {
                     x264 += "\r\n\"" + workPath + "\\mp4box.exe\"  -add  \"" + tempVideo + "#trackID=1:name=\" -new \"" + output + "\" \r\n";
-                    //x264 += "del \"" + tempVideo + "\"";
-                }
             }
             x264 += "\r\n";
 
@@ -1937,7 +1968,7 @@ namespace mp4box
                 aextract = audiobat(namevideo9, tempAudio);
             }
             else
-                aextract = "";
+                aextract = string.Empty;
 
             //video
             if (x264ExeComboBox.SelectedItem.ToString().ToLower().Contains("x264"))
@@ -1966,7 +1997,7 @@ namespace mp4box
             if (AVSwithAudioCheckBox.Checked && hasAudio) //如果包含音频
                 mux = boxmuxbat(tempVideo, tempAudio, nameout9);
             else
-                mux = "";
+                mux = string.Empty;
 
             auto = aextract + x264 + "\r\n" + mux + " \r\n";
             auto += "\r\necho ===== one file is completed! =====\r\n";
@@ -2446,7 +2477,7 @@ namespace mp4box
                     aextract = audiobat(namevideo2, tempAudio);
                     break;
                 case 1:
-                    aextract = "";
+                    aextract = string.Empty;
                     break;
                 case 2:
                     if (audio.ToLower() == "aac")
@@ -2673,7 +2704,14 @@ namespace mp4box
             if (File.Exists(path))
             {
                 namevideo2 = path;
-                x264OutTextBox.Text = Util.ChangeExt(namevideo2, "_x264.mp4");
+                int num = 1;
+                string encType = x264ExeComboBox.SelectedItem.ToString().Contains("x265") ? "x265" : "x264";
+                x264OutTextBox.Text = Util.ChangeExt(namevideo2, string.Format("_{0}.mp4", encType));
+                while (namevideo2.Equals(x264OutTextBox.Text) || File.Exists(x264OutTextBox.Text))
+                {
+                    x264OutTextBox.Text = Util.ChangeExt(namevideo2, string.Format("_new_file({0})_{1}.mp4", num, encType));
+                    num++;
+                }
 
                 if (Path.GetExtension(namevideo2) != ".avs")
                 {
@@ -2685,8 +2723,11 @@ namespace mp4box
                             x264SubTextBox.Text = Util.ChangeExt(namevideo2, ext);
                             break;
                         }
+                        else
+                            x264SubTextBox.Text = string.Empty;
                     }
                 }
+
             }
         }
 
