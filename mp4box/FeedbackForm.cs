@@ -38,27 +38,6 @@ namespace mp4box
             InitializeComponent();
         }
 
-        /// <summary>
-        /// Detects the AviSynth version/date
-        /// </summary>
-        /// <returns></returns>
-        private string CheckAviSynth()
-        {
-            bool bFoundInstalledAviSynth = false;
-            string fileVersion = string.Empty, fileDate = string.Empty, fileProductName = string.Empty;
-            string syswow64path = Environment.GetFolderPath(Environment.SpecialFolder.SystemX86);
-
-            if (!Directory.Exists(syswow64path)
-                           && Util.GetFileInformation(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.System), "avisynth.dll"), out fileVersion, out fileDate, out fileProductName))
-                bFoundInstalledAviSynth = true;
-            else if (Util.GetFileInformation(Path.Combine(syswow64path, "avisynth.dll"), out fileVersion, out fileDate, out fileProductName))
-                bFoundInstalledAviSynth = true;
-
-            if (bFoundInstalledAviSynth)
-                return "AviSynth" + (fileProductName.Contains("+") ? "+" : string.Empty) + "版本: " + fileVersion + " (" + fileDate + ")";
-            else return string.Empty;
-        }
-
         private void FeedbackForm_Load(object sender, EventArgs e)
         {
             string version4 = OSInfo.GetDotNetVersion("4.0");
@@ -72,8 +51,8 @@ namespace mp4box
                 MessageTextBox.AppendText(string.Format("\r\nMicrosoft .NET Framework: {0}", version4));
             if (!string.IsNullOrEmpty(version) && !version4.Equals(version))
                 MessageTextBox.AppendText(string.Format("\r\nMicrosoft .NET Framework: {0}", version));
-            if (!string.IsNullOrEmpty(CheckAviSynth()))
-                MessageTextBox.AppendText("\r\n" + CheckAviSynth());
+            if (!string.IsNullOrEmpty(Util.CheckAviSynth()))
+                MessageTextBox.AppendText("\r\n" + Util.CheckAviSynth());
             else
                 MessageTextBox.AppendText("\r\nAvisynth 未安装");
             MessageTextBox.AppendText("\r\n------------------------------以上信息为自动检测请勿修改------------------------\r\n\r\n");

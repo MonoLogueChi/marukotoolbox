@@ -268,23 +268,24 @@ namespace mp4box
         }
 
         /// <summary>
-        /// ffmpeg output wrapper
+        /// Detects the AviSynth version/date
         /// </summary>
-        /// <param name="workPath">work path which contains ffmpeg</param>
-        /// <param name="filename">target media file</param>
-        /// <returns>ffmpeg output info</returns>
-        public static string GetFFmpegOutput(string workPath, string filename)
+        /// <returns></returns>
+        public static string CheckAviSynth()
         {
-            var processInfo = new System.Diagnostics.ProcessStartInfo(
-                System.IO.Path.Combine(workPath, "ffmpeg.exe"), "-i " + FormatPath(filename));
-            processInfo.WorkingDirectory = System.IO.Directory.GetCurrentDirectory();
-            processInfo.CreateNoWindow = true;
-            processInfo.UseShellExecute = false;
-            processInfo.RedirectStandardError = true;
-            var proc = System.Diagnostics.Process.Start(processInfo);
-            string output = proc.StandardError.ReadToEnd();
-            proc.WaitForExit();
-            return output;
+            bool bFoundInstalledAviSynth = false;
+            string fileVersion = string.Empty, fileDate = string.Empty, fileProductName = string.Empty;
+            string syswow64path = Environment.GetFolderPath(Environment.SpecialFolder.SystemX86);
+
+            if (!Directory.Exists(syswow64path)
+                           && GetFileInformation(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.System), "avisynth.dll"), out fileVersion, out fileDate, out fileProductName))
+                bFoundInstalledAviSynth = true;
+            else if (GetFileInformation(Path.Combine(syswow64path, "avisynth.dll"), out fileVersion, out fileDate, out fileProductName))
+                bFoundInstalledAviSynth = true;
+
+            if (bFoundInstalledAviSynth)
+                return "AviSynth" + (fileProductName.Contains("+") ? "+" : string.Empty) + "版本: " + fileVersion + " (" + fileDate + ")";
+            else return string.Empty;
         }
 
     }

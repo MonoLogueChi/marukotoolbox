@@ -1619,7 +1619,7 @@ namespace mp4box
                 return;
             }
 
-            string bat = "";
+            string bat = string.Empty;
             for (int i = 0; i < this.lbAuto.Items.Count; i++)
             {
                 string input = lbAuto.Items[i].ToString();
@@ -1933,15 +1933,24 @@ namespace mp4box
                 ShowErrorMessage("请选择输出文件");
                 return;
             }
+
             if (Path.GetExtension(nameout9).ToLower() != ".mp4")
             {
                 ShowErrorMessage("仅支持MP4输出", "不支持的输出格式");
                 return;
             }
+
             if (File.Exists(txtout9.Text.Trim()))
             {
                 DialogResult dgs = ShowQuestion("目标文件:\r\n\r\n" + txtout9.Text.Trim() + "\r\n\r\n已经存在,是否覆盖继续压制？", "目标文件已经存在");
                 if (dgs == DialogResult.No) return;
+            }
+
+            if (string.IsNullOrEmpty(Util.CheckAviSynth()))
+            {
+                if (ShowQuestion("检测到本机未安装avisynth无法继续压制，是否去下载安装", "avisynth未安装") == DialogResult.Yes)
+                    Process.Start("http://sourceforge.net/projects/avisynth2/");
+                return;
             }
 
             string tempVideo = "vtemp.mp4";
@@ -2443,6 +2452,12 @@ namespace mp4box
             //如果是AVS复制到C盘根目录
             if (Path.GetExtension(x264VideoTextBox.Text) == ".avs")
             {
+                if (string.IsNullOrEmpty(Util.CheckAviSynth()))
+                {
+                    if (ShowQuestion("检测到本机未安装avisynth无法继续压制，是否去下载安装", "avisynth未安装") == DialogResult.Yes)
+                        Process.Start("http://sourceforge.net/projects/avisynth2/");
+                    return;
+                }
                 //if (File.Exists(tempavspath)) File.Delete(tempavspath);
                 File.Copy(x264VideoTextBox.Text, tempavspath, true);
                 namevideo2 = tempavspath;
