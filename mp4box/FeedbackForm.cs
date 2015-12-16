@@ -53,6 +53,8 @@ namespace mp4box
                 MessageTextBox.AppendText(string.Format("\r\nMicrosoft .NET Framework: {0}", version));
             if (!string.IsNullOrEmpty(Util.CheckAviSynth()))
                 MessageTextBox.AppendText("\r\n" + Util.CheckAviSynth());
+            else if (!string.IsNullOrEmpty(Util.CheckinternalAviSynth()))
+                MessageTextBox.AppendText("\r\n" + Util.CheckinternalAviSynth()+" (本地内置的绿色版本)");
             else
                 MessageTextBox.AppendText("\r\nAvisynth 未安装");
             MessageTextBox.AppendText("\r\n------------------------------以上信息为自动检测请勿修改------------------------\r\n\r\n");

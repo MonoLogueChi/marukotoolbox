@@ -1186,17 +1186,38 @@ namespace mp4box
             }
             catch { }
 
-            //load AVS filter
-            DirectoryInfo avspath = new DirectoryInfo(workPath + "\\avsfilter");
-            List<string> avsfilters = new List<string>();
-            foreach (FileInfo FileName in avspath.GetFiles())
+            // avisynth未安装使用本地内置的avs
+            if (string.IsNullOrEmpty(Util.CheckAviSynth()))
             {
-                if (Path.GetExtension(FileName.Name) == ".dll")
+                string sourceAviSynthdll = Path.Combine(workPath, @"avs\AviSynth.dll");
+                string sourceDevILdll = Path.Combine(workPath, @"avs\DevIL.dll");
+                if (File.Exists(sourceAviSynthdll) && File.Exists(sourceDevILdll))
                 {
-                    avsfilters.Add(FileName.Name);
+                    File.Copy(sourceAviSynthdll, Path.Combine(workPath, "AviSynth.dll"), true);
+                    File.Copy(sourceDevILdll, Path.Combine(workPath, "DevIL.dll"), true);
+                    LogRecord("未安装avisynth,使用本地内置avs.");
                 }
             }
-            AVSFilterComboBox.Items.AddRange(avsfilters.ToArray());
+            else
+            {
+                File.Delete(Path.Combine(workPath, "AviSynth.dll"));
+                File.Delete(Path.Combine(workPath, "DevIL.dll"));
+            }
+
+            //load AVS filter
+            DirectoryInfo avspath = new DirectoryInfo(workPath + @"\avs\plugins");
+            List<string> avsfilters = new List<string>();
+            if (Directory.Exists(workPath + @"\avs\plugins"))
+            {
+                foreach (FileInfo FileName in avspath.GetFiles())
+                {
+                    if (Path.GetExtension(FileName.Name) == ".dll")
+                    {
+                        avsfilters.Add(FileName.Name);
+                    }
+                }
+                AVSFilterComboBox.Items.AddRange(avsfilters.ToArray());
+            }
 
             //ReleaseDate = System.IO.File.GetLastWriteTime(this.GetType().Assembly.Location); //获得程序编译时间
             ReleaseDatelabel.Text = ReleaseDate.ToString("yyyy-M-d");
@@ -1957,7 +1978,7 @@ namespace mp4box
                 if (dgs == DialogResult.No) return;
             }
 
-            if (string.IsNullOrEmpty(Util.CheckAviSynth()))
+            if (string.IsNullOrEmpty(Util.CheckAviSynth()) && string.IsNullOrEmpty(Util.CheckinternalAviSynth()))
             {
                 if (ShowQuestion("检测到本机未安装avisynth无法继续压制，是否去下载安装", "avisynth未安装") == DialogResult.Yes)
                     Process.Start("http://sourceforge.net/projects/avisynth2/");
@@ -2053,7 +2074,7 @@ namespace mp4box
             //        avs += "LoadPlugin(\"" + workpath + "\\avsfilter\\" + FileName + "\")\r\n";
             //    }
             //}
-            avs += "LoadPlugin(\"avsfilter\\VSFilter.DLL\")\r\n";
+            avs += "LoadPlugin(\"avs\\plugins\\VSFilter.DLL\")\r\n";
             avs += string.Format("\r\nLWLibavVideoSource(\"{0}\",23.976,convertFPS=True)\r\nConvertToYV12()\r\nCrop(0,0,0,0)\r\nAddBorders(0,0,0,0)\r\n" + "TextSub(\"{1}\")\r\n#LanczosResize(1280,960)\r\n", namevideo9, namesub9);
             //avs += "\r\nDirectShowSource(\"" + namevideo9 + "\",23.976,convertFPS=True)\r\nConvertToYV12()\r\nCrop(0,0,0,0)\r\nAddBorders(0,0,0,0)\r\n" + "TextSub(\"" + namesub9 + "\")\r\n#LanczosResize(1280,960)\r\n";
             AVSScriptTextBox.Text = avs;
@@ -2463,7 +2484,7 @@ namespace mp4box
             //如果是AVS复制到C盘根目录
             if (Path.GetExtension(x264VideoTextBox.Text) == ".avs")
             {
-                if (string.IsNullOrEmpty(Util.CheckAviSynth()))
+                if (string.IsNullOrEmpty(Util.CheckAviSynth()) && string.IsNullOrEmpty(Util.CheckinternalAviSynth()))
                 {
                     if (ShowQuestion("检测到本机未安装avisynth无法继续压制，是否去下载安装", "avisynth未安装") == DialogResult.Yes)
                         Process.Start("http://sourceforge.net/projects/avisynth2/");
@@ -2739,7 +2760,7 @@ namespace mp4box
                     num++;
                 }
 
-                if (Path.GetExtension(namevideo2) != ".avs")
+                if (Path.GetExtension(namevideo2) != ".avs" && encType == "x264")
                 {
                     string[] subExt = { ".ass", ".ssa", ".srt" };
                     foreach (string ext in subExt)
@@ -3119,15 +3140,23 @@ namespace mp4box
             //    }
             //}
             avsBuilder.Remove(0, avsBuilder.Length);
-            string vsfilterDLLPath = Path.Combine(workPath, @"avsfilter\VSFilter.DLL");
-            string LSMASHSourceDLLPath = Path.Combine(workPath, @"avsfilter\LSMASHSource.DLL");
-            string undotDLLPath = Path.Combine(workPath, @"avsfilter\UnDot.DLL");
+            string vsfilterDLLPath = Path.Combine(workPath, @"avs\plugins\VSFilter.DLL");
+            string LSMASHSourceDLLPath = Path.Combine(workPath, @"avs\plugins\LSMASHSource.DLL");
+            string undotDLLPath = Path.Combine(workPath, @"avs\plugins\UnDot.DLL");
             avsBuilder.AppendLine("LoadPlugin(\"" + vsfilterDLLPath + "\")");
             avsBuilder.AppendLine("LoadPlugin(\"" + LSMASHSourceDLLPath + "\")");
+            string extInput = Path.GetExtension(namevideo9).ToLower();
 
             if (UndotCheckBox.Checked)
                 avsBuilder.AppendLine("LoadPlugin(\"" + undotDLLPath + "\")");
-            avsBuilder.AppendLine("LWLibavVideoSource(\"" + namevideo9 + "\")");
+            if (extInput == ".mp4"
+                   || extInput == ".mov"
+                   || extInput == ".qt"
+                   || extInput == ".3gp"
+                   || extInput == ".3g2")
+                avsBuilder.AppendLine("LSMASHVideoSource(\"" + namevideo9 + "\")");
+            else
+                avsBuilder.AppendLine("LWLibavVideoSource(\"" + namevideo9 + "\")");
             avsBuilder.AppendLine("ConvertToYV12()");
             if (UndotCheckBox.Checked)
                 avsBuilder.AppendLine("Undot()");
@@ -4196,7 +4225,7 @@ namespace mp4box
 
         private void AVSAddFilterButton_Click(object sender, EventArgs e)
         {
-            string vsfilterDLLPath = Path.Combine(workPath, @"avsfilter\" + AVSFilterComboBox.Text);
+            string vsfilterDLLPath = Path.Combine(workPath, @"avs\plugins\" + AVSFilterComboBox.Text);
             string text = "LoadPlugin(\"" + vsfilterDLLPath + "\")" + "\r\n";
             AVSScriptTextBox.Text = text + AVSScriptTextBox.Text;
         }
@@ -4409,6 +4438,7 @@ namespace mp4box
 
             if (x264ExeComboBox.SelectedItem.ToString().ToLower().Contains("x265"))
             {
+                x264SubTextBox.Text = string.Empty;
                 x264SubTextBox.Enabled = false;
                 x264SubBtn.Enabled = false;
                 x264BatchSubCheckBox.Enabled = false;

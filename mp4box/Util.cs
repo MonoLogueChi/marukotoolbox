@@ -288,5 +288,19 @@ namespace mp4box
             else return string.Empty;
         }
 
+        // 检查内置的avs版本
+        public static string CheckinternalAviSynth()
+        {
+            bool bFoundInstalledAviSynth = false;
+            string fileVersion = string.Empty, fileDate = string.Empty, fileProductName = string.Empty;
+
+            if (GetFileInformation(Path.Combine(Application.StartupPath, @"tools\AviSynth.dll"), out fileVersion, out fileDate, out fileProductName))
+                bFoundInstalledAviSynth = true;
+
+            if (bFoundInstalledAviSynth)
+                return "AviSynth" + (fileProductName.Contains("+") ? "+" : string.Empty) + "版本: " + fileVersion + " (" + fileDate + ")";
+            else return string.Empty;
+        }
+
     }
 }
