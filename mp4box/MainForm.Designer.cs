@@ -162,6 +162,8 @@
             this.button7 = new ControlExs.QQButton();
             this.AudioTab = new System.Windows.Forms.TabPage();
             this.NeroAACGroupBox = new System.Windows.Forms.GroupBox();
+            this.audioAddBt = new ControlExs.QQButton();
+            this.audioDeleteBt = new ControlExs.QQButton();
             this.AudioPresetComboBox = new System.Windows.Forms.ComboBox();
             this.AudioPresetLabel = new System.Windows.Forms.Label();
             this.AudioBitrateComboBox = new System.Windows.Forms.ComboBox();
@@ -231,7 +233,6 @@
             this.x264Mode3RadioButton = new ControlExs.QQRadioButton();
             this.x264Mode2RadioButton = new ControlExs.QQRadioButton();
             this.label6 = new System.Windows.Forms.Label();
-            this.PresetNameTextBox = new ControlExs.QQTextBox();
             this.x264AddPresetBtn = new ControlExs.QQButton();
             this.x264DeletePresetBtn = new ControlExs.QQButton();
             this.x264StartBtn = new ControlExs.QQButton();
@@ -1596,6 +1597,8 @@
             // 
             // NeroAACGroupBox
             // 
+            this.NeroAACGroupBox.Controls.Add(this.audioAddBt);
+            this.NeroAACGroupBox.Controls.Add(this.audioDeleteBt);
             this.NeroAACGroupBox.Controls.Add(this.AudioPresetComboBox);
             this.NeroAACGroupBox.Controls.Add(this.AudioPresetLabel);
             this.NeroAACGroupBox.Controls.Add(this.AudioBitrateComboBox);
@@ -1613,6 +1616,20 @@
             resources.ApplyResources(this.NeroAACGroupBox, "NeroAACGroupBox");
             this.NeroAACGroupBox.Name = "NeroAACGroupBox";
             this.NeroAACGroupBox.TabStop = false;
+            // 
+            // audioAddBt
+            // 
+            resources.ApplyResources(this.audioAddBt, "audioAddBt");
+            this.audioAddBt.Name = "audioAddBt";
+            this.audioAddBt.UseVisualStyleBackColor = true;
+            this.audioAddBt.Click += new System.EventHandler(this.audioAddBt_Click);
+            // 
+            // audioDeleteBt
+            // 
+            resources.ApplyResources(this.audioDeleteBt, "audioDeleteBt");
+            this.audioDeleteBt.Name = "audioDeleteBt";
+            this.audioDeleteBt.UseVisualStyleBackColor = true;
+            this.audioDeleteBt.Click += new System.EventHandler(this.audioDeleteBt_Click);
             // 
             // AudioPresetComboBox
             // 
@@ -1998,7 +2015,6 @@
             this.VideoTab.Controls.Add(this.x264VideoTextBox);
             this.VideoTab.Controls.Add(this.panel1);
             this.VideoTab.Controls.Add(this.label6);
-            this.VideoTab.Controls.Add(this.PresetNameTextBox);
             this.VideoTab.Controls.Add(this.x264AddPresetBtn);
             this.VideoTab.Controls.Add(this.x264DeletePresetBtn);
             this.VideoTab.Controls.Add(this.x264StartBtn);
@@ -2275,15 +2291,6 @@
             // 
             resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
-            // 
-            // PresetNameTextBox
-            // 
-            this.PresetNameTextBox.AllowDrop = true;
-            this.PresetNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PresetNameTextBox.EmptyTextTip = null;
-            this.PresetNameTextBox.EmptyTextTipColor = System.Drawing.Color.DarkGray;
-            resources.ApplyResources(this.PresetNameTextBox, "PresetNameTextBox");
-            this.PresetNameTextBox.Name = "PresetNameTextBox";
             // 
             // x264AddPresetBtn
             // 
@@ -3165,7 +3172,6 @@
         private ControlExs.QQTextBox x264SubTextBox;
         private ControlExs.QQTextBox x264OutTextBox;
         private ControlExs.QQTextBox x264VideoTextBox;
-        private ControlExs.QQTextBox PresetNameTextBox;
         private ControlExs.QQTextBox x264CustomParameterTextBox;
         private ControlExs.QQButton x264AddPresetBtn;
         private ControlExs.QQButton x264DeletePresetBtn;
@@ -3347,6 +3353,8 @@
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.ComboBox MuxAacEncoderComboBox;
         private ControlExs.QQCheckBox x265CheckBox;
+        private ControlExs.QQButton audioDeleteBt;
+        private ControlExs.QQButton audioAddBt;
     }
 }
 
