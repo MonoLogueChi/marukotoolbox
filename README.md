@@ -58,9 +58,6 @@ Issue Page: https://marukotoolbox.codeplex.com/workitem/list/advanced
 ===========================
 Discussion: https://marukotoolbox.codeplex.com/discussions
 
-> 最近不更新《小丸工具箱》了，心累。
->   ——小丸
-
 帮助小丸开发 / Contribute
 =====================
 > 代码很乱，别吐槽。

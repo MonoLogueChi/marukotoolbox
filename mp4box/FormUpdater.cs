@@ -1,5 +1,5 @@
 ﻿// ------------------------------------------------------------------
-// Copyright (C) 2015 Maruko Toolbox Project
+// Copyright (C) 2015-2016 Maruko Toolbox Project
 // 
 //  Authors: LunarShaddow <aflyhorse@hotmail.com>
 // 

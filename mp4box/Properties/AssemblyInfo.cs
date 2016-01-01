@@ -1,5 +1,5 @@
 ﻿// ------------------------------------------------------------------
-// Copyright (C) 2011-2015 Maruko Toolbox Project
+// Copyright (C) 2011-2016 Maruko Toolbox Project
 // 
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("http://maruko.appinn.me/")]
 [assembly: AssemblyProduct("Maruko Toolbox")]
-[assembly: AssemblyCopyright("Copyright © 2011-2015")]
+[assembly: AssemblyCopyright("Copyright © 2011-2016")]
 [assembly: AssemblyTrademark("Maruko")]
 [assembly: AssemblyCulture("")]
 
@@ -50,5 +50,5 @@ using System.Runtime.InteropServices;
 // 可以指定所有这些值，也可以使用“内部版本号”和“修订号”的默认值，
 // 方法是按如下所示使用“*”:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.190.0")]
-[assembly: AssemblyFileVersion("1.0.190.0")]
+[assembly: AssemblyVersion("1.0.203.0")]
+[assembly: AssemblyFileVersion("1.0.203.0")]

@@ -1,5 +1,5 @@
 ﻿// ------------------------------------------------------------------
-// Copyright (C) 2011-2015 Maruko Toolbox Project
+// Copyright (C) 2011-2016 Maruko Toolbox Project
 //
 //  Authors: komaruchan <sandy_0308@hotmail.com>
 //           LunarShaddow <aflyhorse@hotmail.com>
@@ -2946,6 +2946,11 @@ namespace mp4box
                     AudioBitrateComboBox.Enabled = true;
                     AudioBitrateRadioButton.Enabled = true;
                     AudioCustomizeRadioButton.Enabled = true;
+                    if (AudioCustomizeRadioButton.Checked)
+                    {
+                        audioDeleteBt.Visible = true;
+                        audioAddBt.Visible = true;
+                    }
                     break;
 
                 case 1:
@@ -2959,6 +2964,11 @@ namespace mp4box
                     AudioBitrateComboBox.Enabled = true;
                     AudioBitrateRadioButton.Enabled = true;
                     AudioCustomizeRadioButton.Enabled = true;
+                    if (AudioCustomizeRadioButton.Checked)
+                    {
+                        audioDeleteBt.Visible = true;
+                        audioAddBt.Visible = true;
+                    }
                     break;
 
                 case 2:
@@ -2997,6 +3007,11 @@ namespace mp4box
                     AudioBitrateComboBox.Enabled = true;
                     AudioBitrateRadioButton.Enabled = true;
                     AudioCustomizeRadioButton.Enabled = true;
+                    if (AudioCustomizeRadioButton.Checked)
+                    {
+                        audioDeleteBt.Visible = true;
+                        audioAddBt.Visible = true;
+                    }
                     break;
 
                 case 6:
