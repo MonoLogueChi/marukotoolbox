@@ -318,8 +318,12 @@ namespace mp4box
 
         private void buttonAbort_Click(object sender, EventArgs e)
         {
-            bgworker.CancelAsync();
-            ProcAbort();
+            DialogResult dgs = MainForm.ShowQuestion("是否放弃压制？", "提示");
+            if (dgs == DialogResult.Yes)
+            {
+                bgworker.CancelAsync();
+                ProcAbort();
+            }
         }
 
         private void buttonSave_Click(object sender, EventArgs e)

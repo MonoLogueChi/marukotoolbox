@@ -4596,42 +4596,42 @@ namespace mp4box
 
         #region Form
 
-        protected String GetCurrentDirectory()
+        public String GetCurrentDirectory()
         {
             return Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
         }
 
-        protected void ShowErrorMessage(String argMessage)
+        public static void ShowErrorMessage(String argMessage)
         {
             MessageBox.Show(argMessage, "错误!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
-        protected void ShowErrorMessage(String argMessage, String argTitle)
+        public static void ShowErrorMessage(String argMessage, String argTitle)
         {
             MessageBox.Show(argMessage, argTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
-        protected void ShowWarningMessage(String argMessage)
+        public static void ShowWarningMessage(String argMessage)
         {
             MessageBox.Show(argMessage, "警告!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
-        protected void ShowWarningMessage(String argMessage, String argTitle)
+        public static void ShowWarningMessage(String argMessage, String argTitle)
         {
             MessageBox.Show(argMessage, argTitle, MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
-        protected void ShowInfoMessage(String argMessage)
+        public static void ShowInfoMessage(String argMessage)
         {
             MessageBox.Show(argMessage, "提示!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        protected void ShowInfoMessage(String argMessage, String argTitle)
+        public static void ShowInfoMessage(String argMessage, String argTitle)
         {
             MessageBox.Show(argMessage, argTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        protected DialogResult ShowQuestion(String argQuestion, String argTitle)
+        public static DialogResult ShowQuestion(String argQuestion, String argTitle)
         {
             return MessageBox.Show(argQuestion, argTitle, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
