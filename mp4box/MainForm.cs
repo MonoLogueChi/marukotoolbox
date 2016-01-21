@@ -136,37 +136,37 @@ namespace mp4box
                 MI.Open(VideoName);
                 //全局
                 string container = MI.Get(StreamKind.General, 0, "Format");
-                string bitrate = MI.Get(StreamKind.General, 0, "BitRate/String");
+                string bitRate = MI.Get(StreamKind.General, 0, "BitRate/String");
                 string duration = MI.Get(StreamKind.General, 0, "Duration/String1");
                 string fileSize = MI.Get(StreamKind.General, 0, "FileSize/String");
                 //视频
-                string vid = MI.Get(StreamKind.Video, 0, "ID");
-                string vformat = MI.Get(StreamKind.Video, 0, "Format");
-                string vBitRate = MI.Get(StreamKind.Video, 0, "BitRate/String");
-                string vSize = MI.Get(StreamKind.Video, 0, "StreamSize/String");
-                string width = MI.Get(StreamKind.Video, 0, "Width");
-                string height = MI.Get(StreamKind.Video, 0, "Height");
-                string risplayAspectRatio = MI.Get(StreamKind.Video, 0, "DisplayAspectRatio/String");
-                string risplayAspectRatio2 = MI.Get(StreamKind.Video, 0, "DisplayAspectRatio");
-                string frameRate = MI.Get(StreamKind.Video, 0, "FrameRate/String");
-                string colorSpace = MI.Get(StreamKind.Video, 0, "ColorSpace");
-                string chromaSubsampling = MI.Get(StreamKind.Video, 0, "ChromaSubsampling");
-                string bitDepth = MI.Get(StreamKind.Video, 0, "BitDepth/String");
-                string scanType = MI.Get(StreamKind.Video, 0, "ScanType/String");
-                string pixelAspectRatio = MI.Get(StreamKind.Video, 0, "PixelAspectRatio");
-                string encodedLibrary = MI.Get(StreamKind.Video, 0, "Encoded_Library/String");
-                string encodingSettings = MI.Get(StreamKind.Video, 0, "Encoded_Library_Settings");
-                string encodeTime = MI.Get(StreamKind.Video, 0, "Encoded_Date");
-                string codecProfile = MI.Get(StreamKind.Video, 0, "Codec_Profile");
-                string frameCount = MI.Get(StreamKind.Video, 0, "FrameCount");
+                string v_id = MI.Get(StreamKind.Video, 0, "ID");
+                string v_format = MI.Get(StreamKind.Video, 0, "Format");
+                string v_bitRate = MI.Get(StreamKind.Video, 0, "BitRate/String");
+                string v_size = MI.Get(StreamKind.Video, 0, "StreamSize/String");
+                string v_width = MI.Get(StreamKind.Video, 0, "Width");
+                string v_height = MI.Get(StreamKind.Video, 0, "Height");
+                string v_displayAspectRatio = MI.Get(StreamKind.Video, 0, "DisplayAspectRatio/String");
+                string v_displayAspectRatio2 = MI.Get(StreamKind.Video, 0, "DisplayAspectRatio");
+                string v_frameRate = MI.Get(StreamKind.Video, 0, "FrameRate/String");
+                string v_colorSpace = MI.Get(StreamKind.Video, 0, "ColorSpace");
+                string v_chromaSubsampling = MI.Get(StreamKind.Video, 0, "ChromaSubsampling");
+                string v_bitDepth = MI.Get(StreamKind.Video, 0, "BitDepth/String");
+                string v_scanType = MI.Get(StreamKind.Video, 0, "ScanType/String");
+                string v_pixelAspectRatio = MI.Get(StreamKind.Video, 0, "PixelAspectRatio");
+                string v_encodedLibrary = MI.Get(StreamKind.Video, 0, "Encoded_Library/String");
+                string v_encodingSettings = MI.Get(StreamKind.Video, 0, "Encoded_Library_Settings");
+                string v_encodedTime = MI.Get(StreamKind.Video, 0, "Encoded_Date");
+                string v_codecProfile = MI.Get(StreamKind.Video, 0, "Codec_Profile");
+                string v_frameCount = MI.Get(StreamKind.Video, 0, "FrameCount");
 
                 //音频
-                string aid = MI.Get(StreamKind.Audio, 0, "ID");
-                string aformat = MI.Get(StreamKind.Audio, 0, "Format");
-                string aBitRate = MI.Get(StreamKind.Audio, 0, "BitRate/String");
-                string samplingRate = MI.Get(StreamKind.Audio, 0, "SamplingRate/String");
-                string channel = MI.Get(StreamKind.Audio, 0, "Channel(s)");
-                string aSize = MI.Get(StreamKind.Audio, 0, "StreamSize/String");
+                string a_id = MI.Get(StreamKind.Audio, 0, "ID");
+                string a_format = MI.Get(StreamKind.Audio, 0, "Format");
+                string a_bitRate = MI.Get(StreamKind.Audio, 0, "BitRate/String");
+                string a_samplingRate = MI.Get(StreamKind.Audio, 0, "SamplingRate/String");
+                string a_channel = MI.Get(StreamKind.Audio, 0, "Channel(s)");
+                string a_size = MI.Get(StreamKind.Audio, 0, "StreamSize/String");
 
                 string audioInfo = MI.Get(StreamKind.Audio, 0, "Inform") + MI.Get(StreamKind.Audio, 1, "Inform") + MI.Get(StreamKind.Audio, 2, "Inform") + MI.Get(StreamKind.Audio, 3, "Inform");
                 string videoInfo = MI.Get(StreamKind.Video, 0, "Inform");
@@ -174,56 +174,56 @@ namespace mp4box
                 info = info.Append(Path.GetFileName(VideoName) + "\r\n");
                 if (!string.IsNullOrEmpty(container))
                     info.Append("容器：" + container + "\r\n");
-                if (!string.IsNullOrEmpty(bitrate))
-                    info.Append("总码率：" + bitrate + "\r\n");
+                if (!string.IsNullOrEmpty(bitRate))
+                    info.Append("总码率：" + bitRate + "\r\n");
                 if (!string.IsNullOrEmpty(fileSize))
                     info.Append("大小：" + fileSize + "\r\n");
                 if (!string.IsNullOrEmpty(duration))
                     info.Append("时长：" + duration + "\r\n");
 
-                if (!string.IsNullOrEmpty(vformat))
-                    info.Append("\r\n" + "视频(" + vid + ")：" + vformat + "\r\n");
-                if (!string.IsNullOrEmpty(codecProfile))
-                    info.Append("Profile：" + codecProfile + "\r\n");
-                if (!string.IsNullOrEmpty(vBitRate))
-                    info.Append("码率：" + vBitRate + "\r\n");
-                if (!string.IsNullOrEmpty(vSize))
-                    info.Append("文件大小：" + vSize + "\r\n");
-                if (!string.IsNullOrEmpty(width) && !string.IsNullOrEmpty(height))
-                    info.Append("分辨率：" + width + "x" + height + "\r\n");
-                if (!string.IsNullOrEmpty(risplayAspectRatio) && !string.IsNullOrEmpty(risplayAspectRatio2))
-                    info.Append("画面比例：" + risplayAspectRatio + "(" + risplayAspectRatio2 + ")" + "\r\n");
-                if (!string.IsNullOrEmpty(pixelAspectRatio))
-                    info.Append("像素宽高比：" + pixelAspectRatio + "\r\n");
-                if (!string.IsNullOrEmpty(frameRate))
-                    info.Append("帧率：" + frameRate + "\r\n");
-                if (!string.IsNullOrEmpty(colorSpace))
-                    info.Append("色彩空间：" + colorSpace + "\r\n");
-                if (!string.IsNullOrEmpty(chromaSubsampling))
-                    info.Append("色度抽样：" + chromaSubsampling + "\r\n");
-                if (!string.IsNullOrEmpty(bitDepth))
-                    info.Append("位深度：" + bitDepth + "\r\n");
-                if (!string.IsNullOrEmpty(scanType))
-                    info.Append("扫描方式：" + scanType + "\r\n");
-                if (!string.IsNullOrEmpty(encodeTime))
-                    info.Append("编码时间：" + encodeTime + "\r\n");
-                if (!string.IsNullOrEmpty(frameCount))
-                    info.Append("总帧数：" + frameCount + "\r\n");
-                if (!string.IsNullOrEmpty(encodedLibrary))
-                    info.Append("编码库：" + encodedLibrary + "\r\n");
-                if (!string.IsNullOrEmpty(encodingSettings))
-                    info.Append("编码设置：" + encodingSettings + "\r\n");
+                if (!string.IsNullOrEmpty(v_format))
+                    info.Append("\r\n" + "视频(" + v_id + ")：" + v_format + "\r\n");
+                if (!string.IsNullOrEmpty(v_codecProfile))
+                    info.Append("Profile：" + v_codecProfile + "\r\n");
+                if (!string.IsNullOrEmpty(v_bitRate))
+                    info.Append("码率：" + v_bitRate + "\r\n");
+                if (!string.IsNullOrEmpty(v_size))
+                    info.Append("文件大小：" + v_size + "\r\n");
+                if (!string.IsNullOrEmpty(v_width) && !string.IsNullOrEmpty(v_height))
+                    info.Append("分辨率：" + v_width + "x" + v_height + "\r\n");
+                if (!string.IsNullOrEmpty(v_displayAspectRatio) && !string.IsNullOrEmpty(v_displayAspectRatio2))
+                    info.Append("画面比例：" + v_displayAspectRatio + "(" + v_displayAspectRatio2 + ")" + "\r\n");
+                if (!string.IsNullOrEmpty(v_pixelAspectRatio))
+                    info.Append("像素宽高比：" + v_pixelAspectRatio + "\r\n");
+                if (!string.IsNullOrEmpty(v_frameRate))
+                    info.Append("帧率：" + v_frameRate + "\r\n");
+                if (!string.IsNullOrEmpty(v_colorSpace))
+                    info.Append("色彩空间：" + v_colorSpace + "\r\n");
+                if (!string.IsNullOrEmpty(v_chromaSubsampling))
+                    info.Append("色度抽样：" + v_chromaSubsampling + "\r\n");
+                if (!string.IsNullOrEmpty(v_bitDepth))
+                    info.Append("位深度：" + v_bitDepth + "\r\n");
+                if (!string.IsNullOrEmpty(v_scanType))
+                    info.Append("扫描方式：" + v_scanType + "\r\n");
+                if (!string.IsNullOrEmpty(v_encodedTime))
+                    info.Append("编码时间：" + v_encodedTime + "\r\n");
+                if (!string.IsNullOrEmpty(v_frameCount))
+                    info.Append("总帧数：" + v_frameCount + "\r\n");
+                if (!string.IsNullOrEmpty(v_encodedLibrary))
+                    info.Append("编码库：" + v_encodedLibrary + "\r\n");
+                if (!string.IsNullOrEmpty(v_encodingSettings))
+                    info.Append("编码设置：" + v_encodingSettings + "\r\n");
 
-                if (!string.IsNullOrEmpty(aformat))
-                    info.Append("\r\n" + "音频(" + aid + ")：" + aformat + "\r\n");
-                if (!string.IsNullOrEmpty(aSize))
-                    info.Append("大小：" + aSize + "\r\n");
-                if (!string.IsNullOrEmpty(aBitRate))
-                    info.Append("码率：" + aBitRate + "\r\n");
-                if (!string.IsNullOrEmpty(samplingRate))
-                    info.Append("采样率：" + samplingRate + "\r\n");
-                if (!string.IsNullOrEmpty(channel))
-                    info.Append("声道数：" + channel + "\r\n");
+                if (!string.IsNullOrEmpty(a_format))
+                    info.Append("\r\n" + "音频(" + a_id + ")：" + a_format + "\r\n");
+                if (!string.IsNullOrEmpty(a_size))
+                    info.Append("大小：" + a_size + "\r\n");
+                if (!string.IsNullOrEmpty(a_bitRate))
+                    info.Append("码率：" + a_bitRate + "\r\n");
+                if (!string.IsNullOrEmpty(a_samplingRate))
+                    info.Append("采样率：" + a_samplingRate + "\r\n");
+                if (!string.IsNullOrEmpty(a_channel))
+                    info.Append("声道数：" + a_channel + "\r\n");
                 info.Append("\r\n====详细信息====\r\n" + videoInfo + "\r\n" + audioInfo + "\r\n");
                 MI.Close();
             }
