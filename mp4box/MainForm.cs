@@ -127,7 +127,7 @@ namespace mp4box
             InitializeComponent();
         }
 
-        public string MediaInfo(string VideoName)
+        public string GetMediaInfoString(string VideoName)
         {
             StringBuilder info = new StringBuilder();
             if (File.Exists(VideoName))
@@ -168,7 +168,10 @@ namespace mp4box
                 string a_channel = MI.Get(StreamKind.Audio, 0, "Channel(s)");
                 string a_size = MI.Get(StreamKind.Audio, 0, "StreamSize/String");
 
-                string audioInfo = MI.Get(StreamKind.Audio, 0, "Inform") + MI.Get(StreamKind.Audio, 1, "Inform") + MI.Get(StreamKind.Audio, 2, "Inform") + MI.Get(StreamKind.Audio, 3, "Inform");
+                string audioInfo = MI.Get(StreamKind.Audio, 0, "Inform")
+                    + MI.Get(StreamKind.Audio, 1, "Inform")
+                    + MI.Get(StreamKind.Audio, 2, "Inform")
+                    + MI.Get(StreamKind.Audio, 3, "Inform");
                 string videoInfo = MI.Get(StreamKind.Video, 0, "Inform");
 
                 info = info.Append(Path.GetFileName(VideoName) + "\r\n");
@@ -2331,7 +2334,7 @@ namespace mp4box
             if (result == DialogResult.OK)
             {
                 MIvideo = openFileDialog1.FileName;
-                MediaInfoTextBox.Text = MediaInfo(MIvideo);
+                MediaInfoTextBox.Text = GetMediaInfoString(MIvideo);
             }
         }
 
@@ -3912,7 +3915,7 @@ namespace mp4box
         private void txtMI_DragDrop(object sender, DragEventArgs e)
         {
             MIvideo = ((System.Array)e.Data.GetData(DataFormats.FileDrop)).GetValue(0).ToString();
-            MediaInfoTextBox.Text = MediaInfo(MIvideo);
+            MediaInfoTextBox.Text = GetMediaInfoString(MIvideo);
         }
 
         private void txtMI_DragEnter(object sender, DragEventArgs e)
