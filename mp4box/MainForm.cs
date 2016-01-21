@@ -2337,7 +2337,12 @@ namespace mp4box
 
         private void btnMIplay_Click(object sender, EventArgs e)
         {
-            Process.Start(MIvideo);
+            try
+            {
+                Process.Start(MIvideo);
+            }
+            catch
+            { }
         }
 
         private void btnMIcopy_Click(object sender, EventArgs e)
