@@ -1558,6 +1558,7 @@ namespace mp4box
             {
                 lbAuto.Items.AddRange(openFileDialog1.FileNames);
             }
+            openFileDialog1.Multiselect = false;
         }
 
         private void btnAutoDel_Click(object sender, EventArgs e)
@@ -1806,6 +1807,7 @@ namespace mp4box
             {
                 lbffmpeg.Items.AddRange(openFileDialog1.FileNames);
             }
+            openFileDialog1.Multiselect = false;
         }
 
         private void btnffmpegDel_Click(object sender, EventArgs e)
@@ -2920,6 +2922,7 @@ namespace mp4box
             {
                 lbAuto.Items.AddRange(openFileDialog1.FileNames);
             }
+            openFileDialog1.Multiselect = false;
         }
 
         #endregion 视频页面
@@ -3241,6 +3244,7 @@ namespace mp4box
             {
                 AudioListBox.Items.AddRange(openFileDialog1.FileNames);
             }
+            openFileDialog1.Multiselect = false;
         }
 
         private void AudioDeleteButton_Click(object sender, EventArgs e)
