@@ -1847,7 +1847,7 @@ namespace mp4box
                     //如果是源文件的格式和目标格式相同则跳过
                     if (Path.GetExtension(filePath).Contains(ext))
                         continue;
-                    string finish = filePath.Remove(filePath.LastIndexOf(".") + 1) + ext;
+                    string finish = Path.ChangeExtension(filePath, ext);
                     aextract = "";
 
                     //检测音频是否需要转换为AAC
@@ -2657,7 +2657,7 @@ namespace mp4box
                 if (x264mode == 2)
                     x264 = x265bat(namevideo2, tempVideo, 1) + "\r\n" +
                            x265bat(namevideo2, tempVideo, 2);
-                else x264 = x265bat(namevideo2, tempVideo, 0);
+                else x264 = x265bat(namevideo2, tempVideo);
                 if (audioMode == 1)
                 {
                     x264 += "\r\n\"" + workPath + "\\mp4box.exe\" -add  \"" + tempVideo + "#trackID=1:name=\" -new \"" + Util.ChangeExt(nameout2, ".mp4") + "\" \r\n";

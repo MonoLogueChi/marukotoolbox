@@ -358,7 +358,7 @@
     <value>1</value>
   </data>
   <data name="RotateButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="RotateButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -412,7 +412,7 @@
     <value>3</value>
   </data>
   <data name="btnvideo4.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="btnvideo4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -442,7 +442,7 @@
     <value>4</value>
   </data>
   <data name="btnout5.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="btnout5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -472,7 +472,7 @@
     <value>5</value>
   </data>
   <data name="btnClip.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="btnClip.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -721,7 +721,7 @@
     <value>6</value>
   </data>
   <data name="btnMIopen.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="btnMIopen.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -751,7 +751,7 @@
     <value>0</value>
   </data>
   <data name="btnMIplay.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="btnMIplay.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -781,7 +781,7 @@
     <value>1</value>
   </data>
   <data name="btnMIcopy.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="btnMIcopy.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1495,7 +1495,7 @@
     <value>5</value>
   </data>
   <data name="AVSAddFilterButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="AVSAddFilterButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2437,7 +2437,7 @@
     <value>35</value>
   </data>
   <data name="AVSSaveButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="AVSSaveButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2731,7 +2731,7 @@
     <value>44</value>
   </data>
   <data name="button9.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="button9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2761,7 +2761,7 @@
     <value>45</value>
   </data>
   <data name="button6.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="button6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2794,7 +2794,7 @@
     <value>46</value>
   </data>
   <data name="btnpreview9.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="btnpreview9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2824,7 +2824,7 @@
     <value>47</value>
   </data>
   <data name="btnAVS9.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="btnAVS9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2854,7 +2854,7 @@
     <value>48</value>
   </data>
   <data name="btnvideo9.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="btnvideo9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2884,7 +2884,7 @@
     <value>49</value>
   </data>
   <data name="btnout9.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="btnout9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2914,7 +2914,7 @@
     <value>50</value>
   </data>
   <data name="btnsub9.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="btnsub9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -3127,7 +3127,7 @@
     <value>0</value>
   </data>
   <data name="gmkvextractguibButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="gmkvextractguibButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -3157,7 +3157,7 @@
     <value>0</value>
   </data>
   <data name="MkvExtract4Button.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="MkvExtract4Button.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -3187,7 +3187,7 @@
     <value>1</value>
   </data>
   <data name="MkvExtract3Button.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="MkvExtract3Button.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -3217,7 +3217,7 @@
     <value>2</value>
   </data>
   <data name="MkvExtract2Button.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="MkvExtract2Button.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -3247,7 +3247,7 @@
     <value>3</value>
   </data>
   <data name="MkvExtract1Button.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="MkvExtract1Button.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -3277,7 +3277,7 @@
     <value>4</value>
   </data>
   <data name="btnextract7.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="btnextract7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -3307,7 +3307,7 @@
     <value>5</value>
   </data>
   <data name="btnvideo7.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="btnvideo7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -3433,7 +3433,7 @@
     <value>1</value>
   </data>
   <data name="btnvextract8.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="btnvextract8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -3463,7 +3463,7 @@
     <value>0</value>
   </data>
   <data name="btnvideo8.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="btnvideo8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -3517,7 +3517,7 @@
     <value>2</value>
   </data>
   <data name="btnaextract8.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="btnaextract8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -3667,7 +3667,7 @@
     <value>0</value>
   </data>
   <data name="btnaextract3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="btnaextract3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -3697,7 +3697,7 @@
     <value>1</value>
   </data>
   <data name="ExtractMP4Button.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="ExtractMP4Button.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -3727,7 +3727,7 @@
     <value>2</value>
   </data>
   <data name="btnvextract.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="btnvextract.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -3757,7 +3757,7 @@
     <value>3</value>
   </data>
   <data name="btnaextract.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="btnaextract.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -3787,7 +3787,7 @@
     <value>4</value>
   </data>
   <data name="btnaextract2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="btnaextract2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -4183,7 +4183,7 @@
     <value>4</value>
   </data>
   <data name="btnffmpegAdd.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="btnffmpegAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -4213,7 +4213,7 @@
     <value>5</value>
   </data>
   <data name="btnffmpegClear.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="btnffmpegClear.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -4273,7 +4273,7 @@
     <value>7</value>
   </data>
   <data name="btnffmpegDel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="btnffmpegDel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -4303,7 +4303,7 @@
     <value>8</value>
   </data>
   <data name="btnBatchMP4.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="btnBatchMP4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -4582,7 +4582,7 @@
     <value>1</value>
   </data>
   <data name="MuxReplaceAudioButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="MuxReplaceAudioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -4636,7 +4636,7 @@
     <value>3</value>
   </data>
   <data name="btnvideo.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="btnvideo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -4666,7 +4666,7 @@
     <value>4</value>
   </data>
   <data name="btnmux.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="btnmux.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -4747,7 +4747,7 @@
     <value>6</value>
   </data>
   <data name="btnaudio.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="btnaudio.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -4777,7 +4777,7 @@
     <value>7</value>
   </data>
   <data name="btnout.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="btnout.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -5041,7 +5041,7 @@
     <value>0</value>
   </data>
   <data name="button4.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="button4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -5095,7 +5095,7 @@
     <value>2</value>
   </data>
   <data name="button3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="button3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -5149,7 +5149,7 @@
     <value>4</value>
   </data>
   <data name="button5.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="button5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -5203,7 +5203,7 @@
     <value>6</value>
   </data>
   <data name="button2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="button2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -5233,7 +5233,7 @@
     <value>7</value>
   </data>
   <data name="button7.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="button7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -5530,7 +5530,7 @@
     <value>0</value>
   </data>
   <data name="audioAddBt.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="audioAddBt.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -5563,7 +5563,7 @@
     <value>0</value>
   </data>
   <data name="audioDeleteBt.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="audioDeleteBt.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -5923,7 +5923,7 @@
     <value>9</value>
   </data>
   <data name="btnaudio2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="btnaudio2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -5983,7 +5983,7 @@
     <value>11</value>
   </data>
   <data name="btnout3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="btnout3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -6043,7 +6043,7 @@
     <value>13</value>
   </data>
   <data name="btnaac.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="btnaac.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -6211,7 +6211,7 @@
     <value>1</value>
   </data>
   <data name="AudioJoinButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="AudioJoinButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -6271,7 +6271,7 @@
     <value>1</value>
   </data>
   <data name="AudioBatchButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="AudioBatchButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -6328,7 +6328,7 @@
     <value>3</value>
   </data>
   <data name="AudioAddButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="AudioAddButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -6358,7 +6358,7 @@
     <value>4</value>
   </data>
   <data name="AudioClearButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="AudioClearButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -6388,7 +6388,7 @@
     <value>5</value>
   </data>
   <data name="AudioDeleteButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="AudioDeleteButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -6847,7 +6847,7 @@
     <value>7</value>
   </data>
   <data name="AudioOnePicOutputButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="AudioOnePicOutputButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -6877,7 +6877,7 @@
     <value>8</value>
   </data>
   <data name="AudioOnePicButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="AudioOnePicButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -6907,7 +6907,7 @@
     <value>9</value>
   </data>
   <data name="AudioPicAudioButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="AudioPicAudioButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -6937,7 +6937,7 @@
     <value>10</value>
   </data>
   <data name="AudioPicButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="AudioPicButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -7588,7 +7588,7 @@
     <value>13</value>
   </data>
   <data name="x264AddPresetBtn.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="x264AddPresetBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -7621,7 +7621,7 @@
     <value>14</value>
   </data>
   <data name="x264DeletePresetBtn.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="x264DeletePresetBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -7654,7 +7654,7 @@
     <value>15</value>
   </data>
   <data name="x264StartBtn.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="x264StartBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -7684,7 +7684,7 @@
     <value>16</value>
   </data>
   <data name="x264SubBtn.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="x264SubBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -7714,7 +7714,7 @@
     <value>17</value>
   </data>
   <data name="x264OutBtn.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="x264OutBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -7744,7 +7744,7 @@
     <value>18</value>
   </data>
   <data name="x264VideoBtn.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="x264VideoBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -8476,7 +8476,7 @@
     <value>2</value>
   </data>
   <data name="x264PathButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="x264PathButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -8557,7 +8557,7 @@
     <value>5</value>
   </data>
   <data name="x264BatchClearBtn.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="x264BatchClearBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -8620,7 +8620,7 @@
     <value>7</value>
   </data>
   <data name="x264BatchDeleteBtn.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="x264BatchDeleteBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -8650,7 +8650,7 @@
     <value>8</value>
   </data>
   <data name="x264BatchAddBtn.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="x264BatchAddBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -8680,7 +8680,7 @@
     <value>9</value>
   </data>
   <data name="btnBatchAuto.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="btnBatchAuto.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -8920,7 +8920,7 @@
     <value>8</value>
   </data>
   <data name="FeedbackButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="FeedbackButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -9031,7 +9031,7 @@
     <value>3</value>
   </data>
   <data name="CheckUpdateButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="CheckUpdateButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -9061,7 +9061,7 @@
     <value>4</value>
   </data>
   <data name="HomePageBtn.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="HomePageBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -9091,7 +9091,7 @@
     <value>5</value>
   </data>
   <data name="AboutBtn.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="AboutBtn.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -9850,7 +9850,7 @@
     <value>False</value>
   </data>
   <data name="BlackPicButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="BlackPicButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -9907,7 +9907,7 @@
     <value>12</value>
   </data>
   <data name="BlackStartButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="BlackStartButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -9937,7 +9937,7 @@
     <value>13</value>
   </data>
   <data name="BlackOutputButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="BlackOutputButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -9967,7 +9967,7 @@
     <value>14</value>
   </data>
   <data name="BlackVideoButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="BlackVideoButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -10795,7 +10795,7 @@
     <value>5</value>
   </data>
   <data name="DeleteLogButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="DeleteLogButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -10825,7 +10825,7 @@
     <value>3</value>
   </data>
   <data name="SetDefaultButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="SetDefaultButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -10855,7 +10855,7 @@
     <value>4</value>
   </data>
   <data name="ViewLogButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9pt</value>
+    <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="ViewLogButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
