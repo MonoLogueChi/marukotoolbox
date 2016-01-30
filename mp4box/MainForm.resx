@@ -4060,7 +4060,7 @@
     <value>libfaac</value>
   </data>
   <data name="MuxAacEncoderComboBox.Items2" xml:space="preserve">
-    <value>libvo_aacenc</value>
+    <value>aac</value>
   </data>
   <data name="MuxAacEncoderComboBox.Items3" xml:space="preserve">
     <value />

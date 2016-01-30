@@ -1856,7 +1856,7 @@ namespace mp4box
                     string audio = MI.Get(StreamKind.Audio, 0, "Format");
                     if (audio.ToLower() != "aac")
                     {
-                        mux += "\"" + workPath + "\\ffmpeg.exe\" -y -i \"" + lbffmpeg.Items[i].ToString() + "\" -c:v copy -c:a " + MuxAacEncoderComboBox.Text + " \"" + finish + "\" \r\n";
+                        mux += "\"" + workPath + "\\ffmpeg.exe\" -y -i \"" + lbffmpeg.Items[i].ToString() + "\" -c:v copy -c:a " + MuxAacEncoderComboBox.Text + " -strict -2 \"" + finish + "\" \r\n";
                     }
                     else
                     {
