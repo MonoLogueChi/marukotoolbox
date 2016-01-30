@@ -4062,9 +4062,6 @@
   <data name="MuxAacEncoderComboBox.Items2" xml:space="preserve">
     <value>aac</value>
   </data>
-  <data name="MuxAacEncoderComboBox.Items3" xml:space="preserve">
-    <value />
-  </data>
   <data name="MuxAacEncoderComboBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>91, 241</value>
   </data>

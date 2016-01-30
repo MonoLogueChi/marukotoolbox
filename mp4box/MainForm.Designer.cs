@@ -1294,8 +1294,7 @@
             this.MuxAacEncoderComboBox.Items.AddRange(new object[] {
             resources.GetString("MuxAacEncoderComboBox.Items"),
             resources.GetString("MuxAacEncoderComboBox.Items1"),
-            resources.GetString("MuxAacEncoderComboBox.Items2"),
-            resources.GetString("MuxAacEncoderComboBox.Items3")});
+            resources.GetString("MuxAacEncoderComboBox.Items2")});
             resources.ApplyResources(this.MuxAacEncoderComboBox, "MuxAacEncoderComboBox");
             this.MuxAacEncoderComboBox.Name = "MuxAacEncoderComboBox";
             // 
