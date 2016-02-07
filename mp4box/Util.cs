@@ -372,8 +372,10 @@ namespace mp4box
                     filterString = String.Format("{0}(*.avs)|*.avs;", avs); break;
                 case DialogFilterTypes.PROGRAM:
                     filterString = String.Format("{0}(*.exe)|*.exe|{1}(*.*)|*.*;", program, all); break;
-                case DialogFilterTypes.SUBTITLE:
+                case DialogFilterTypes.SUBTITLE_1:
                     filterString = String.Format("{0}(*.ass;*.ssa;*.srt)|*.ass;*.ssa;*.srt|{1}(*.*)|*.*;", subtitle, all); break;
+                case DialogFilterTypes.SUBTITLE_2:
+                    filterString = String.Format("{0}(*.ass;*.ssa;*.srt;*.idx;*.sup)|*.ass;*.ssa;*.srt;*.idx;*.sup|{1}(*.*)|*.*;", subtitle, all); break;
                 case DialogFilterTypes.IMAGE:
                     filterString = String.Format("{0}(*.jpg;*.jpeg;*.png;*.bmp;*.gif)|*.jpg;*.jpeg;*.png;*.bmp;*.gif|{1}(*.*)|*.*;", image, all); break;
 
@@ -391,7 +393,7 @@ namespace mp4box
             AUDIO_1, AUDIO_2, AUDIO_3, AUDIO_4, AUDIO_5,
             AVS,
             PROGRAM,
-            SUBTITLE,
+            SUBTITLE_1, SUBTITLE_2,
             IMAGE,
         }
 

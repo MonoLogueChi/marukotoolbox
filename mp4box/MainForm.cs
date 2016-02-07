@@ -1492,7 +1492,7 @@ namespace mp4box
 
         private void button5_Click_1(object sender, EventArgs e)
         {
-            openFileDialog1.Filter = Util.GetDialogFilter(Util.DialogFilterTypes.SUBTITLE); //"字幕(*.ass;*.ssa;*.srt)|*.ass;*.ssa;*.srt|所有文件(*.*)|*.*";
+            openFileDialog1.Filter = Util.GetDialogFilter(Util.DialogFilterTypes.SUBTITLE_2); //"字幕(*.ass;*.ssa;*.srt;*.idx;*.sup)|*.ass;*.ssa;*.srt;*.idx;*.sup|所有文件(*.*)|*.*";
             DialogResult result = openFileDialog1.ShowDialog();
             if (result == DialogResult.OK)
             {
@@ -2257,7 +2257,7 @@ namespace mp4box
 
         private void btnsub9_Click(object sender, EventArgs e)
         {
-            openFileDialog1.Filter = Util.GetDialogFilter(Util.DialogFilterTypes.SUBTITLE); //"字幕(*.ass;*.ssa;*.srt)|*.ass;*.ssa;*.srt|所有文件(*.*)|*.*";
+            openFileDialog1.Filter = Util.GetDialogFilter(Util.DialogFilterTypes.SUBTITLE_2); //"字幕(*.ass;*.ssa;*.srt;*.idx;*.sup)|*.ass;*.ssa;*.srt;*.idx;*.sup|所有文件(*.*)|*.*";
             DialogResult result = openFileDialog1.ShowDialog();
             if (result == DialogResult.OK)
             {
@@ -2516,7 +2516,7 @@ namespace mp4box
 
         private void x264SubBtn_Click(object sender, EventArgs e)
         {
-            openFileDialog1.Filter = Util.GetDialogFilter(Util.DialogFilterTypes.SUBTITLE); //"字幕(*.ass;*.ssa;*.srt)|*.ass;*.ssa;*.srt|所有文件(*.*)|*.*";
+            openFileDialog1.Filter = Util.GetDialogFilter(Util.DialogFilterTypes.SUBTITLE_1); //"字幕(*.ass;*.ssa;*.srt)|*.ass;*.ssa;*.srt|所有文件(*.*)|*.*";
             DialogResult result = openFileDialog1.ShowDialog();
             if (result == DialogResult.OK)
             {
@@ -3288,12 +3288,15 @@ namespace mp4box
             //}
             avsBuilder.Remove(0, avsBuilder.Length);
             string vsfilterDLLPath = Path.Combine(workPath, @"avs\plugins\VSFilter.DLL");
+            string SupTitleDLLPath = Path.Combine(workPath, @"avs\plugins\SupTitle.dll");
             string LSMASHSourceDLLPath = Path.Combine(workPath, @"avs\plugins\LSMASHSource.DLL");
             string undotDLLPath = Path.Combine(workPath, @"avs\plugins\UnDot.DLL");
-            avsBuilder.AppendLine("LoadPlugin(\"" + vsfilterDLLPath + "\")");
-            avsBuilder.AppendLine("LoadPlugin(\"" + LSMASHSourceDLLPath + "\")");
             string extInput = Path.GetExtension(namevideo9).ToLower();
-
+            avsBuilder.AppendLine("LoadPlugin(\"" + LSMASHSourceDLLPath + "\")");
+            if (Path.GetExtension(namesub9).ToLower() == ".sup")
+                avsBuilder.AppendLine("LoadPlugin(\"" + SupTitleDLLPath + "\")");
+            else
+                avsBuilder.AppendLine("LoadPlugin(\"" + vsfilterDLLPath + "\")");
             if (UndotCheckBox.Checked)
                 avsBuilder.AppendLine("LoadPlugin(\"" + undotDLLPath + "\")");
             if (extInput == ".mp4"
@@ -3321,8 +3324,10 @@ namespace mp4box
                 avsBuilder.AppendLine("AddBorders(" + AddBorders1NumericUpDown.Value.ToString() + "," + AddBorders2NumericUpDown.Value.ToString() + "," + AddBorders3NumericUpDown.Value.ToString() + "," + AddBorders4NumericUpDown.Value.ToString() + ")");
             if (!string.IsNullOrEmpty(txtsub9.Text))
             {
-                if (Path.GetExtension(namesub9) == ".idx")
+                if (Path.GetExtension(namesub9).ToLower() == ".idx")
                     avsBuilder.AppendLine("vobsub(\"" + namesub9 + "\")");
+                else if (Path.GetExtension(namesub9).ToLower() == ".sup")
+                    avsBuilder.AppendLine("SupTitle(\"" + namesub9 + "\")");
                 else
                     avsBuilder.AppendLine("TextSub(\"" + namesub9 + "\")");
             }
