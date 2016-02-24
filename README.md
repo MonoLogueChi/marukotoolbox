@@ -1,6 +1,6 @@
 小丸工具箱 / Maruko's Toolbox
 ===========================
-A Video-prosessing GUI
+Maruko's Toolbox is a Video-processing GUI.
 
 * Homepage: http://www.maruko.in/ (Sponsored by Tech Team of ACICFG)
 * https://marukotoolbox.codeplex.com
