@@ -37,6 +37,9 @@
             this.progressBarX264 = new System.Windows.Forms.ProgressBar();
             this.labelProgress = new System.Windows.Forms.Label();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.CopyTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonAbort
@@ -57,6 +60,7 @@
             // 
             resources.ApplyResources(this.richTextBoxOutput, "richTextBoxOutput");
             this.richTextBoxOutput.BackColor = System.Drawing.Color.White;
+            this.richTextBoxOutput.ContextMenuStrip = this.contextMenuStrip;
             this.richTextBoxOutput.Name = "richTextBoxOutput";
             this.richTextBoxOutput.ReadOnly = true;
             this.richTextBoxOutput.VScroll += new System.EventHandler(this.richTextBoxOutput_VScroll);
@@ -84,6 +88,19 @@
             resources.ApplyResources(this.notifyIcon, "notifyIcon");
             this.notifyIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseClick);
             // 
+            // contextMenuStrip
+            // 
+            this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.CopyTextToolStripMenuItem});
+            this.contextMenuStrip.Name = "contextMenuStrip";
+            resources.ApplyResources(this.contextMenuStrip, "contextMenuStrip");
+            // 
+            // CopyTextToolStripMenuItem
+            // 
+            this.CopyTextToolStripMenuItem.Name = "CopyTextToolStripMenuItem";
+            resources.ApplyResources(this.CopyTextToolStripMenuItem, "CopyTextToolStripMenuItem");
+            this.CopyTextToolStripMenuItem.Click += new System.EventHandler(this.CopyTextToolStripMenuItem_Click);
+            // 
             // WorkingForm
             // 
             resources.ApplyResources(this, "$this");
@@ -98,6 +115,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WorkingForm_FormClosing);
             this.Load += new System.EventHandler(this.WorkingForm_Load);
             this.Resize += new System.EventHandler(this.WorkingForm_Resize);
+            this.contextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,5 +131,7 @@
         private System.Windows.Forms.Label labelProgress;
         private System.Windows.Forms.NotifyIcon notifyIcon;
         private ITaskbarList3 taskbarProgress;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem CopyTextToolStripMenuItem;
     }
 }

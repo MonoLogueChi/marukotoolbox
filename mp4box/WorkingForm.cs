@@ -692,5 +692,15 @@ namespace mp4box
                 }
             });
         }
+
+        /// <summary>
+        /// Add CopyText menu for RichTextBox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CopyTextToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(richTextBoxOutput.Text);
+        }
     }
 }
