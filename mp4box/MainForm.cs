@@ -843,12 +843,13 @@ namespace mp4box
                 string systemTempPath = systemDisk + @"windows\temp";
 
                 //Delete all BAT files
-                DirectoryInfo theFolder = new DirectoryInfo(workPath);
-                foreach (FileInfo NextFile in theFolder.GetFiles())
-                {
-                    if (NextFile.Extension.Equals(".bat"))
-                        deleteFileList.Add(NextFile.FullName);
-                }
+                //DirectoryInfo theFolder = new DirectoryInfo(workPath);
+                //foreach (FileInfo NextFile in theFolder.GetFiles())
+                //{
+                //    if (NextFile.Extension.Equals(".bat"))
+                //        deleteFileList.Add(NextFile.FullName);
+                //}
+                string[] batFiles = Directory.GetFiles(workPath, "*.bat");
 
                 if (Directory.Exists(tempfilepath))
                 {
@@ -858,9 +859,9 @@ namespace mp4box
                     }
                 }
 
-                string[] deletedfiles = { "concat.txt", tempPic, tempavspath, workPath + "msg.vbs" };
+                string[] deletedfiles = { "concat.txt", tempPic, tempavspath};
                 deleteFileList.AddRange(deletedfiles);
-
+                deleteFileList.AddRange(batFiles);
                 foreach (string file in deleteFileList)
                 {
                     File.Delete(file);
@@ -1731,6 +1732,11 @@ namespace mp4box
                 return;
             }
 
+            if (AudioEncoderComboBox.SelectedIndex != 0 && AudioEncoderComboBox.SelectedIndex != 1 && AudioEncoderComboBox.SelectedIndex != 5)
+            {
+                ShowWarningMessage("音频页面中的编码器未采用AAC将可能导致压制失败，建议将编码器改为QAAC、NeroAAC或FDKAAC。");
+            }
+
             Util.ensureDirectoryExists(tempfilepath);
             string bat = string.Empty;
             for (int i = 0; i < this.lbAuto.Items.Count; i++)
@@ -1854,7 +1860,7 @@ namespace mp4box
                     MediaInfo MI = new MediaInfo();
                     MI.Open(filePath);
                     string audio = MI.Get(StreamKind.Audio, 0, "Format");
-                    if (audio.ToLower() != "aac")
+                    if (audio.ToLower() != "aac" && MuxFormatComboBox.Text != "mkv")
                     {
                         mux += "\"" + workPath + "\\ffmpeg.exe\" -y -i \"" + lbffmpeg.Items[i].ToString() + "\" -c:v copy -c:a " + MuxAacEncoderComboBox.Text + " -strict -2 \"" + finish + "\" \r\n";
                     }
