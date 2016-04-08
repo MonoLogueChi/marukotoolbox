@@ -167,6 +167,10 @@ namespace mp4box
         /// </summary>
         private BackgroundWorker bgworker = new BackgroundWorker();
 
+        /// <summary>
+        /// The file name of the video in process
+        /// </summary>
+        private string FileName;
         #endregion
 
         #region Regex Patterns
@@ -268,6 +272,11 @@ namespace mp4box
             var sw = new System.IO.StreamWriter(batPath, false, encoder);
             sw.WriteLine(Commands);
             sw.Close();
+
+            // get file name
+            Match result = Patterns.fileReg.Match(Commands);
+            FileName = System.IO.Path.GetFileNameWithoutExtension(result.Groups["fileIn"].Value);
+
             // synchronize UI
             workCompleted = -1;
             richTextBoxOutput.Select();
@@ -563,7 +572,7 @@ namespace mp4box
         {
             ++workCompleted;
             this.InvokeIfRequired(() =>
-                this.Text = "Xiaowan (" + workCompleted + '/' + WorkQueued + ')');
+                this.Text = FileName + " (" + workCompleted + '/' + WorkQueued + ')');
             this.labelworkCount.InvokeIfRequired(() =>
                 labelworkCount.Text = workCompleted.ToString() + '/' + WorkQueued + " Completed");
         }
