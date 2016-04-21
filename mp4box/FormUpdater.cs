@@ -71,7 +71,7 @@ namespace mp4box
             client = new System.Net.WebClient();
             client.DownloadFileCompleted += client_DownloadFileCompleted;
             client.DownloadProgressChanged += client_DownloadProgressChanged;
-            client.DownloadFileAsync(new Uri("http://mtbftest.sinaapp.com/xiaowan.exe"), newPath);
+            client.DownloadFileAsync(new Uri("http://maruko.appinn.me/config/xiaowan.exe"), newPath);
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)

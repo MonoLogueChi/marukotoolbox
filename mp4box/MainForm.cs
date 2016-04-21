@@ -94,7 +94,7 @@ namespace mp4box
         private string tempPic = "";
         private string logFileName, logPath;
         private string tempfilepath;
-        private DateTime ReleaseDate = DateTime.Parse("2015-9-10 8:0:0");
+        private DateTime ReleaseDate = DateTime.Parse("2016-6-6 8:0:0");
 
         #endregion Private Members Declaration
 
@@ -4213,7 +4213,7 @@ namespace mp4box
 
         public bool CheckUpdate(out DateTime NewDate, out bool isFullUpdate)
         {
-            WebRequest request = WebRequest.Create("http://mtbftest.sinaapp.com/version.php");
+            WebRequest request = WebRequest.Create("http://maruko.appinn.me/config/version.html");
             WebResponse wrs = request.GetResponse();
             // read the response ...
             Stream dataStream = wrs.GetResponseStream();
@@ -4261,7 +4261,7 @@ namespace mp4box
         {
             if (Util.IsConnectInternet())
             {
-                WebRequest request = WebRequest.Create("http://mtbftest.sinaapp.com/version.php");
+                WebRequest request = WebRequest.Create("http://maruko.appinn.me/config/version.html");
                 request.Credentials = CredentialCache.DefaultCredentials;
                 // Get the response.
                 request.BeginGetResponse(new AsyncCallback(OnResponse), request);
