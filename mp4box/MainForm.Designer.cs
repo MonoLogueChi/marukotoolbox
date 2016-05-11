@@ -310,6 +310,9 @@
             this.DeleteLogButton = new ControlExs.QQButton();
             this.SetDefaultButton = new ControlExs.QQButton();
             this.ViewLogButton = new ControlExs.QQButton();
+            this.label45 = new System.Windows.Forms.Label();
+            this.OnePicAudioSecondTxt = new System.Windows.Forms.TextBox();
+            this.label46 = new System.Windows.Forms.Label();
             this.groupBox10.SuspendLayout();
             this.MediaInfoTab.SuspendLayout();
             this.AVSTab.SuspendLayout();
@@ -1831,6 +1834,9 @@
             // 
             // groupBox9
             // 
+            this.groupBox9.Controls.Add(this.label46);
+            this.groupBox9.Controls.Add(this.OnePicAudioSecondTxt);
+            this.groupBox9.Controls.Add(this.label45);
             this.groupBox9.Controls.Add(this.OnePicCRFNum);
             this.groupBox9.Controls.Add(this.label33);
             this.groupBox9.Controls.Add(this.AudioCopyCheckBox);
@@ -2982,6 +2988,21 @@
             this.ViewLogButton.UseVisualStyleBackColor = true;
             this.ViewLogButton.Click += new System.EventHandler(this.ViewLogButton_Click);
             // 
+            // label45
+            // 
+            resources.ApplyResources(this.label45, "label45");
+            this.label45.Name = "label45";
+            // 
+            // OnePicAudioSecondTxt
+            // 
+            resources.ApplyResources(this.OnePicAudioSecondTxt, "OnePicAudioSecondTxt");
+            this.OnePicAudioSecondTxt.Name = "OnePicAudioSecondTxt";
+            // 
+            // label46
+            // 
+            resources.ApplyResources(this.label46, "label46");
+            this.label46.Name = "label46";
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -3354,6 +3375,9 @@
         private ControlExs.QQCheckBox x265CheckBox;
         private ControlExs.QQButton audioDeleteBt;
         private ControlExs.QQButton audioAddBt;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.TextBox OnePicAudioSecondTxt;
+        private System.Windows.Forms.Label label45;
     }
 }
 

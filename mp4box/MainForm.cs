@@ -859,7 +859,7 @@ namespace mp4box
                     }
                 }
 
-                string[] deletedfiles = { "concat.txt", tempPic, tempavspath};
+                string[] deletedfiles = { "concat.txt", tempPic, tempavspath };
                 deleteFileList.AddRange(deletedfiles);
                 deleteFileList.AddRange(batFiles);
                 foreach (string file in deleteFileList)
@@ -3884,7 +3884,16 @@ namespace mp4box
                 //获得音频时长
                 MediaInfo MI = new MediaInfo();
                 MI.Open(AudioPicAudioTextBox.Text);
-                int seconds = SecondsFromHHMMSS(MI.Get(StreamKind.General, 0, "Duration/String3"));
+                string timeStr = MI.Get(StreamKind.General, 0, "Duration/String3");
+                if (!string.IsNullOrEmpty(timeStr))
+                    OnePicAudioSecondTxt.Text = SecondsFromHHMMSS(timeStr).ToString();
+                int seconds = 0;
+                bool SecondisInt = int.TryParse(OnePicAudioSecondTxt.Text, out seconds);
+                if (!SecondisInt)
+                {
+                    ShowErrorMessage("未能获取正确时间，请手动输入秒数。");
+                    return;
+                }
                 string ffPath = Path.Combine(workPath, "ffmpeg.exe");
                 string neroPath = Path.Combine(workPath, "neroaacenc.exe");
                 if (AudioCopyCheckBox.Checked)
